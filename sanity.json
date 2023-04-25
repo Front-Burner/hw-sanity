@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "front-burner-template"
+    "name": "fb-hw"
   },
   "api": {
-    "projectId": "gvi07ntv",
+    "projectId": "p30kv71z",
     "dataset": "production"
   },
   "plugins": [
@@ -19,9 +19,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

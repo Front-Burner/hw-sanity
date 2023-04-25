@@ -1,10 +1,10 @@
 {
-  "name": "front-burner-template",
+  "name": "hw-sanity",
   "private": true,
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Jacob Byers <byers.jacob@gmail.com>",
+  "author": "",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",

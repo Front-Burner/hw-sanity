@@ -1,54 +1,57 @@
-import S from '@sanity/desk-tool/structure-builder'
-import { FiMenu, FiCheckCircle, FiCircle, FiInfo, FiPlusCircle } from "react-icons/fi";
+import S from "@sanity/desk-tool/structure-builder";
+import {
+  GiHotMeal,
+  GiHamburger,
+  GiCheeseWedge,
+  GiBerriesBowl,
+  GiFireBowl,
+  GiSteak,
+} from "react-icons/gi";
 
+import { getGlobalSlug, previewURL } from "../../utils/resolveProductionUrl";
 
-const menus = S.listItem()
-  .title('Menu')
-  .icon(FiMenu)
+import starters from "./starters";
+
+const WebPreview = ({ document }) => {
+  const { displayed } = document;
+  return <iframe src={previewURL + displayed.slug.current} frameBorder={0} />;
+};
+
+export const getDefaultDocumentNode = () => {
+  // Conditionally return a different configuration based on the schema type
+  return S.document().views([
+    S.view.form(),
+    S.view.component(WebPreview).title("Web"),
+  ]);
+};
+
+const menu = S.listItem()
+  .title("Menu")
+  .icon(GiHotMeal)
   .child(
     S.list()
-      .title('Menu')
+      .title("Menu")
       .items([
+        starters.icon(GiCheeseWedge),
+        S.documentTypeListItem("sandwiches")
+          .title("Burgers & Sandwiches")
+          .icon(GiHamburger),
+        S.documentTypeListItem("greens")
+          .title("Greens & Soups")
+          .icon(GiFireBowl),
         S.listItem()
-          .title('Published Menu Items')
-          .icon(FiCheckCircle)
-          .schemaType('menu')
+          .title("Sides")
+          .icon(GiBerriesBowl)
           .child(
-            S.documentList('menu')
-              .title('Published Menu Items')
-              .menuItems(S.documentTypeList('menu').getMenuItems())
-              // Only show menu items with publish date earlier than now and that is not drafts
-              .filter('_type == "menu" && !(_id in path("drafts.**"))')
-              .child((documentId) =>
-                S.document()
-                  .documentId(documentId)
-                  .schemaType('menu')
-                  //.views([S.view.form()])
-              )
+            S.list()
+              .title("Sides")
+              .items([
+                S.documentTypeListItem("sides")
+                  .title("Menu Items")
+                  .icon(GiBerriesBowl),
+              ])
           ),
-        S.documentTypeListItem('menu').title('All Menu Items').icon(FiCircle),
-        S.listItem()
-          .title('Menu by Category')
-          .icon(FiInfo)
-          .child(
-            // List out all categories
-            S.documentTypeList('category')
-              .title('Menu by category')
-              .child(catId =>
-                // List out project documents where the _id for the selected
-                // category appear as a _ref in the project’s categories array
-                S.documentList()
-                  .schemaType('menu')
-                  .title('Menu Items')
-                  .filter(
-                    '_type == "menu" && categories._ref == $catId'
-                  )
-                  .params({ catId })
-              )
-        ),
-        S.divider(),
-        S.documentTypeListItem('category').title('Categories').icon(FiPlusCircle)
       ])
-  )
+  );
 
-export default menus
+export default menu;
