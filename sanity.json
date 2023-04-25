@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "fb-hw"
-  },
   "api": {
     "projectId": "p30kv71z",
     "dataset": "production"
+  },
+  "project": {
+    "name": "front-burner-template"
   },
   "plugins": [
     "@sanity/base",
