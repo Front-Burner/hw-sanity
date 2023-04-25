@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "p30kv71z",
+    "dataset": "production"
+  },
   "project": {
     "name": "front-burner-template"
-  },
-  "api": {
-    "projectId": "gvi07ntv",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
