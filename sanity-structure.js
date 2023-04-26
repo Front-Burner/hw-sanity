@@ -22,6 +22,10 @@ const hiddenDocTypes = (listItem) =>
     "sides",
     "sidesCategory",
     "greens",
+    "brunch",
+    "texasPlates",
+    "beef",
+    "daily",
   ].includes(listItem.getId());
 
 export default () =>
