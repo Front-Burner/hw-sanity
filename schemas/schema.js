@@ -21,6 +21,10 @@ import sandwichCategory from "./documents/sandwichCategory";
 import sidesCategory from "./documents/sidesCategory";
 import sides from "./documents/sides";
 import greens from "./documents/greens";
+import brunch from "./documents/brunch";
+import texasPlates from "./documents/texasPlates";
+import beef from "./documents/beef";
+import daily from "./documents/daily";
 // Components
 import seo from "./components/seo";
 import hero from "./components/hero";
@@ -54,6 +58,10 @@ export default createSchema({
     sides,
     sidesCategory,
     greens,
+    brunch,
+    texasPlates,
+    beef,
+    daily,
     // Components,
     seo,
     textBlock,

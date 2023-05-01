@@ -39,6 +39,14 @@ const menu = S.listItem()
         S.documentTypeListItem("greens")
           .title("Greens & Soups")
           .icon(GiFireBowl),
+        S.documentTypeListItem("brunch").title("Brunch").icon(GiFireBowl),
+        S.documentTypeListItem("texasPlates")
+          .title("Texas Plates")
+          .icon(GiFireBowl),
+        S.documentTypeListItem("beef")
+          .title("Farm Raised TX Beef")
+          .icon(GiFireBowl),
+        S.documentTypeListItem("daily").title("Daily Plates").icon(GiFireBowl),
         S.listItem()
           .title("Sides")
           .icon(GiBerriesBowl)
