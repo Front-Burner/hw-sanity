@@ -10,8 +10,11 @@ import menu from "./documents/menu";
 import category from "./documents/category";
 import page from "./documents/page";
 import homePage from "./documents/homePage";
+import groupsPage from "./documents/groupsPage";
 import global from "./documents/global";
 import basicPage from "./documents/basicPage";
+import offsiteDiningPage from "./documents/offsiteDiningPage";
+import whatsHappeningPage from "./documents/whatsHappeningPage";
 import navMenu from "./documents/navMenu";
 import contactPage from "./documents/contactPage";
 import starters from "./documents/starters";
@@ -49,6 +52,9 @@ export default createSchema({
     page,
     homePage,
     basicPage,
+    offsiteDiningPage,
+    whatsHappeningPage,
+    groupsPage,
     navMenu,
     contactPage,
     starters,
