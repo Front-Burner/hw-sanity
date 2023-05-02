@@ -73,9 +73,9 @@ export default {
       group: "info",
     },
     {
-      name: "address",
+      name: "map",
       type: "geopoint",
-      title: "Address",
+      title: "Map",
       group: "info",
     },
     {

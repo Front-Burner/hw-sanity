@@ -32,6 +32,7 @@ import daily from "./documents/daily";
 import seo from "./components/seo";
 import hero from "./components/hero";
 import textBlock from "./components/textBlock";
+import carouselHero from "./components/carouselHero";
 
 // Objects
 import defaultImage from "./objects/defaultImage";
@@ -72,6 +73,7 @@ export default createSchema({
     seo,
     textBlock,
     hero,
+    carouselHero,
     // Objects
     defaultImage,
     route,

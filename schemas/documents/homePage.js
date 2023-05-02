@@ -1,39 +1,36 @@
 export default {
-  title: 'Home',
-  name: 'homePage',
-  type: 'document',
+  title: "Home",
+  name: "homePage",
+  type: "document",
   //__experimental_actions: ['update', /* 'create', 'delete', */ 'publish'],
   fields: [
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string',
-      validation: Rule => Rule.required()
+      title: "Title",
+      name: "title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
     },
     {
-      title: 'SEO / Share Settings',
-      name: 'seo',
-      type: 'seo'
+      title: "SEO / Share Settings",
+      name: "seo",
+      type: "seo",
     },
     {
-      name: 'sections',
-      type: 'array',
-      title: 'Page sections',
-      description: 'Add, edit, and reorder sections',
-      of: [
-        { type: 'hero' },
-        { type: 'textBlock' },
-      ],
-    }
+      name: "sections",
+      type: "array",
+      title: "Page sections",
+      description: "Add, edit, and reorder sections",
+      of: [{ type: "hero" }, { type: "textBlock" }, { type: "carouselHero" }],
+    },
   ],
   preview: {
     select: {
-      title: 'title'
+      title: "title",
     },
-    prepare ({ title }) {
+    prepare({ title }) {
       return {
-        title
-      }
-    }
-  }
-}
+        title,
+      };
+    },
+  },
+};
